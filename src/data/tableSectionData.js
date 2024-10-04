@@ -1,0 +1,51 @@
+export const streamData = [
+  {
+    song: "Song A",
+    artist: "Artist 1",
+    dateStreamed: "2023-10-01",
+    streamCount: 50000,
+    userId: "123",
+  },
+  {
+    song: "Song B",
+    artist: "Artist 2",
+    dateStreamed: "2023-09-30",
+    streamCount: 45000,
+    userId: "456",
+  },
+  {
+    song: "Song C",
+    artist: "Artist 3",
+    dateStreamed: "2023-09-29",
+    streamCount: 30000,
+    userId: "789",
+  },
+  {
+    song: "Song D",
+    artist: "Artist 4",
+    dateStreamed: "2023-10-05",
+    streamCount: 60000,
+    userId: "189",
+  },
+  {
+    song: "Song E",
+    artist: "Artist 5",
+    dateStreamed: "2023-10-11",
+    streamCount: 55000,
+    userId: "248",
+  },
+  {
+    song: "Song F",
+    artist: "Artist 6",
+    dateStreamed: "2023-09-25",
+    streamCount: 58000,
+    userId: "353",
+  },
+  {
+    song: "Song G",
+    artist: "Artist 6",
+    dateStreamed: "2023-10-26",
+    streamCount: 65000,
+    userId: "461",
+  },
+];

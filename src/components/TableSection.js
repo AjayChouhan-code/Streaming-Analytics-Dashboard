@@ -1,0 +1,105 @@
+import React, { useState } from "react";
+import { streamData } from "../data/tableSectionData";
+
+export const TableSection = () => {
+  const [filterArtist, setFilterArtist] = useState("");
+  const [filterSong, setFilterSong] = useState("");
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: null });
+
+  const sortedData = [...streamData].sort((a, b) => {
+    if (!sortConfig.key) return 0;
+    if (a[sortConfig.key] < b[sortConfig.key])
+      return sortConfig.direction === "ascending" ? -1 : 1;
+    if (a[sortConfig.key] > b[sortConfig.key])
+      return sortConfig.direction === "ascending" ? 1 : -1;
+    return 0;
+  });
+
+  const filteredData = sortedData.filter(
+    (item) =>
+      item.artist.toLowerCase().includes(filterArtist.toLowerCase()) &&
+      item.song.toLowerCase().includes(filterSong.toLowerCase())
+  );
+
+  const requestSort = (key, direction) => {
+    setSortConfig({ key, direction });
+  };
+
+  return (
+    <div className="table-section">
+      <h3>Recent Streams</h3>
+
+      <input
+        type="text"
+        placeholder="Filter by artist"
+        value={filterArtist}
+        onChange={(e) => setFilterArtist(e.target.value)}
+        style={{ marginRight: "10px" }}
+      />
+
+      <input
+        type="text"
+        placeholder="Filter by song"
+        value={filterSong}
+        onChange={(e) => setFilterSong(e.target.value)}
+      />
+
+      <table>
+        <thead>
+          <tr>
+            <th>Song Name</th>
+            <th>Artist</th>
+            <th>
+              Date Streamed
+              <span style={{ marginLeft: "5px" }}>
+                <span
+                  style={{ cursor: "pointer", marginRight: "5px" }}
+                  onClick={() => requestSort("dateStreamed", "ascending")}
+                >
+                  ▲
+                </span>
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => requestSort("dateStreamed", "descending")}
+                >
+                  ▼
+                </span>
+              </span>
+            </th>
+            <th>
+              Stream Count
+              <span style={{ marginLeft: "5px" }}>
+                <span
+                  style={{ cursor: "pointer", marginRight: "5px" }}
+                  onClick={() => requestSort("streamCount", "ascending")}
+                >
+                  ▲
+                </span>
+                <span
+                  style={{ cursor: "pointer" }}
+                  onClick={() => requestSort("streamCount", "descending")}
+                >
+                  ▼
+                </span>
+              </span>
+            </th>
+            <th>User ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map((row, index) => (
+            <tr key={index}>
+              <td>{row.song}</td>
+              <td>{row.artist}</td>
+              <td>{row.dateStreamed}</td>
+              <td>{row.streamCount}</td>
+              <td>{row.userId}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default TableSection;
