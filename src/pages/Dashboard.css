@@ -1,103 +1,78 @@
 .dashboard {
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+}
+
+.header h1 {
+  font-weight: 600;
+}
+
+.metrics-section .card {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e5f7ff;
+}
+
+.metrics-section .card svg {
+  font-size: 20px;
+}
+
+.metrics-section .card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.metrics-section .card p {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.chart-container h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.chart-container .card {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 15px 0px #eee;
+}
+.table-section {
+  margin-top: 20px;
+}
+
+.table-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.table-section input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #9b9595;
+}
+.dashboard {
+  font-family: "Arial", sans-serif;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .table-section table {
+    table-layout: fixed;
+    display: inline-block;
+    white-space: nowrap;
   }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
+  .table-section input {
+    width: 48%;
+    display: inline-block;
   }
-  
-  .metrics-section {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+  .table-section input:last-child {
+    width: 49%;
   }
-  
-  .chart-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .chart-container {
-    margin: 20px 0;
-  }
-  
-  .table-section {
-    margin-top: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    cursor: pointer;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-  .dashboard {
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .metrics-section {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .chart-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .chart-container {
-    margin: 20px 0;
-  }
-  
-  .table-section {
-    margin-top: 20px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    cursor: pointer;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    padding: 5px;
-  }
-  
+}
