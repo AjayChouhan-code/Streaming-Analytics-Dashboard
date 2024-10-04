@@ -1,5 +1,3 @@
-// src/data/mockData.js
-
 export const userData = [
   { month: "Jan", totalUsers: 100000, activeUsers: 20000 },
   { month: "Feb", totalUsers: 120000, activeUsers: 25000 },
