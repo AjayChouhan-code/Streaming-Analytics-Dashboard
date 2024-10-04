@@ -57,15 +57,15 @@ export const TableSection = () => {
               <th>Artist</th>
               <th>
                 Date Streamed
-                <span style={{ marginLeft: "5px" }}>
+                <span className="arrow-div">
                   <span
-                    style={{ cursor: "pointer", marginRight: "5px" }}
+                    className="arrow-up"
                     onClick={() => requestSort("dateStreamed", "ascending")}
                   >
                     ▲
                   </span>
                   <span
-                    style={{ cursor: "pointer" }}
+                    className="arrow-down"
                     onClick={() => requestSort("dateStreamed", "descending")}
                   >
                     ▼
@@ -74,15 +74,15 @@ export const TableSection = () => {
               </th>
               <th>
                 Stream Count
-                <span style={{ marginLeft: "5px" }}>
+                <span className="arrow-div">
                   <span
-                    style={{ cursor: "pointer", marginRight: "5px" }}
+                    className="arrow-up"
                     onClick={() => requestSort("streamCount", "ascending")}
                   >
                     ▲
                   </span>
                   <span
-                    style={{ cursor: "pointer" }}
+                    className="arrow-down"
                     onClick={() => requestSort("streamCount", "descending")}
                   >
                     ▼
